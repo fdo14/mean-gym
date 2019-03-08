@@ -1,0 +1,159 @@
+html {
+  background: #000;
+}
+
+
+.body{
+  background: url("./gym.svg") repeat-x;
+  background-size: 100vw;
+  width: 100vw;
+}
+
+.bench {
+  background: url("./bench.svg") no-repeat;
+  width: 200px;
+  height: 150px;
+  animation: walk .75s steps(8) infinite;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+.bench.benchhovered {
+  animation: walk 1s steps(1) infinite;
+}
+
+.chin {
+  background: url("./chin.svg") no-repeat;
+  width: 150px;
+  height: 150px;
+  animation: walk 1s steps(8) infinite;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+.chin.chinhovered {
+  animation: walk 1s steps(1) infinite;
+}
+
+.squat {
+  background: url("./squat.svg") no-repeat;
+  width: 150px;
+  height: 150px;
+  animation: walk 1s steps(8) infinite;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+.squat.squathovered {
+  animation: walk 1s steps(1) infinite;
+}
+
+.ball {
+  background: url("./ball.svg") no-repeat;
+  width: 133.3px;
+  height: 100px;
+  animation: walkBall 1s steps(8) infinite;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+.ball.ballhovered {
+  animation: walk 1s steps(1) infinite;
+}
+
+.chin:hover, .bench:hover, .squat:hover, .ball:hover{
+  cursor: pointer;
+}
+
+.bubble {
+  background: url("./bubble.svg") no-repeat;
+  background-size: 150px 150px;
+  width: 150px;
+  height: 150px;
+  animation: expand .5s 1;
+}
+
+.bubbleRev {
+  background: url("./bubbleRev.svg") no-repeat;
+  background-size: 150px 150px;
+  width: 150px;
+  height: 150px;
+  animation: expand .5s 1;
+}
+
+@keyframes expand {
+  from {background-size: 0px 0px;}
+  to {background-size: 150px 150px;}
+}
+
+@keyframes walk {
+  100% { background-position: 0 -1200px; }
+}
+
+@keyframes walkBall {
+  100% { background-position: 0 -800px; }
+}
+
+
+.sign {
+  background: url("./sign.png") no-repeat;
+  background-size: 250px auto;
+  width: 250px;
+  height: 225px;
+
+}
+
+.shadowfilter {
+  animation: neon 4s ease 1;
+  -webkit-filter: drop-shadow(0px 0px 8px rgba(240, 113, 89, 0.8));
+}
+
+@keyframes neon {
+  0% {
+    -webkit-filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
+  	-webkit-transition: all 0.1s linear;
+  	-o-transition: all 0.1s linear;
+  	transition: all 0.1s linear;
+  }
+  10% {
+    -webkit-filter: drop-shadow(0px 0px 8px rgba(240, 113, 89, 0.8));
+  }
+  15% {
+    -webkit-filter: drop-shadow(0px 0px 0px rgba(240, 113, 89, 0.8));
+  }
+  25% {
+    -webkit-filter: drop-shadow(0px 0px 8px rgba(240, 113, 89, 0.8));
+   }
+   50% {
+     -webkit-filter: drop-shadow(0px 0px 0px rgba(240, 113, 89, 0.8));
+   }
+   60%{
+     -webkit-filter: drop-shadow(0px 0px 4px rgba(240, 113, 89, 0.8));
+   }
+   100%{
+     -webkit-filter: drop-shadow(0px 0px 8px rgba(240, 113, 89, 0.8));
+  }
+}
+
+.center {
+  display: table;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.insults{
+  font-family: 'Sniglet', cursive;
+  color: white;
+  padding: auto 0;
+  margin: auto; /* Important */
+  text-align: center;
+  animation: toView 1.2s 1;
+}
+
+@keyframes toView {
+  from {color: transparent}
+  to {opacity: white}
+}
